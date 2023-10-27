@@ -1,0 +1,121 @@
+:root {
+   --purple: rgba(232,106,236,1);
+    --dark: rgb(47, 46, 46);
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(47, 46, 46);
+}
+
+h2 {
+    color: var(--purple);
+}
+
+p {
+    font-size: 12px;
+    color: white;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+}
+
+#subhead {
+    display: flex;
+    justify-content: center;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: -20px;
+    text-align:center;
+}
+#grid1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-top: 20px;
+}
+
+.snippet-box {
+    width: 300px;
+    border: dashed 1px white;
+    padding: 10px;
+    margin-bottom: 20px;
+    
+}
+.code-card .card-header {
+    border-radius: 8px;
+    transition: all 0.5s ease-in-out;
+}
+
+.code-card:hover,
+.code-card:hover .card-header {
+    box-shadow: inset 0px 0px 8px
+rgba(232,106,236,1), 0 0 15px
+rgba(232,106,236,1);
+}
+        
+.card-header {
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 5px;
+    position: relative;
+    margin-top: -20px;
+    z-index: 1;
+    background-color: var(--dark);
+}
+.snippet-box p {
+    color: var(--purple);
+}
+pre {
+    color:white;
+    border-radius: 10px;
+    padding: 5px;
+        background-image: linear-gradient(
+        rgba(232,106,236,0.3) 0%,
+        rgba(232,106,236,0.6) 100%
+    );
+    user-select: all;
+}
+#Flexbox-Row {grid-area: "row";}
+#Flexbox-Column {grid-area: "column"}
+#CSS-Grid {grid-area: "css";}
+#Linear-Gradients {grid-area: "linear";}
+#Transition-Box {grid-area: "transition";}
+#Overlay-Card {grid-area: "overlay";}
+
+footer {
+    display: flex;
+    justify-content: center;
+    color: var(--purple);
+}
+
+@media only screen and (max-width:992px) {
+    #grid1 {
+        display: grid;
+        grid-template-areas: 
+        "row column"
+        "css linear"
+        "transition overlay";
+    }
+}
+
+@media only screen and (max-width:768px) {
+    #grid1 {
+        display: grid;
+        grid-template-areas: 
+        "row"
+
+        "column"
+        
+        "css"
+        
+        "linear"
+        
+        "transition"
+        
+        "overlay"
+        ;
+    }
+}
